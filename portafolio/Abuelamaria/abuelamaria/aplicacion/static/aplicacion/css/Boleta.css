@@ -1,0 +1,44 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.factura {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.detalles-producto {
+    margin-bottom: 20px;
+}
+
+.totales {
+    text-align: right;
+}
+
+.titulo-fondo-negro {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.titulo-fondo-negro h1 {
+    margin: 0;
+}
+
+.tituloboleta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: rgb(255, 235, 54);
+  }

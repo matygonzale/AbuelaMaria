@@ -1,0 +1,95 @@
+{% extends "tienda/Base.html"%}
+{% load static %}
+{% load utilidades %}
+{% block title %} Verificación del pago {%endblock %}
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <br>
+      <br>
+      <h2 class="card-title mt-2">Verificación del pago</h2>
+      <p> <strong> Para ir a pagar necesitamos algunos datos tuyos para poder realizar la compra de forma
+          exitosa.</strong></p>
+      {% include 'tienda/flash.html' %}
+
+      <hr />
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted"><strong>Tu pedido</strong></span>
+            <span class="badge badge-secondary badge-pill">{{datos.count}}</span>
+          </h4>
+          <ul class="list-group mb-3">
+            {% for dato in datos %}
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0 color_negro">{{dato.producto.nombre}}</h6>
+                <small class="text-muted">Cantidad: {{dato.cantidad}}</small>
+              </div>
+              <span
+                class="text-muted color_negro">${{dato.producto.precio|multiplicarValores:dato.cantidad|numberFormat}}</span>
+            </li>
+            {% endfor %}
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total</span>
+              <strong class="color_negro">${{suma|numberFormat}}</strong>
+            </li>
+          </ul>
+
+
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Datos del Comprador</h4>
+          <form class="needs-validation" name="form_pagar" method="post" action="{% url 'carro_webpay' %}">
+            {% csrf_token %}
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nombre</label>
+                <input type="text" class="form-control" id="fnombre" name="nombre" value="{{cliente.nombre}}"
+                  readonly="true" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" value="{{cliente.apellido}}"
+                  readonly="true" />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">E-Mail </label>
+              <input type="email" class="form-control" id="correo" name="correo" value="{{request.user.username}}"
+                readonly="true" />
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Teléfono</label>
+              <input type="email" class="form-control" id="telefono" name="telefono" value="{{cliente.telefono}}"
+                readonly="true" />
+            </div>
+            <br>
+            <hr class="mb-4">
+            <button class="boton-redondo" type="button" title="Ir a webpay para realizar el pago"
+              onclick="sendPago();"><i class="fas fa-money-check-alt"></i> Ir a webpay para realizar el pago</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function sendPago() {
+    let form = document.form_pagar;
+    form.submit();
+  }
+</script>
+
+
+{% endblock %}

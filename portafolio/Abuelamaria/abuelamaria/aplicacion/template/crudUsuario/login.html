@@ -1,0 +1,54 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/login.css' %}">
+    <title>Abuela María</title>
+</head>
+<body>
+    <br>
+    <br>
+    <div class="login-container" id="login-container">
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="form-group">
+                <i class="bi bi-person icono-perfil"></i> <!-- Ícono de perfil con clase "icono-perfil" -->
+                <br>
+                <br>
+                <label for="username" style="color: white;">Usuario:</label>
+                <br><br>
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="password" style="color: white;">Contraseña:</label>
+                <br><br>
+                <input type="password" id="password" name="password" placeholder="Contraseña"  required>
+            </div>
+            <br>
+            <button id="butoonLogin" onclick="mostrarMensaje()" type="submit">Iniciar Sesión</button>
+        </form>
+        <br>
+        <a href="{% url 'crearusuario' %}" style="color: white;">Crear Cuenta</a>
+        <span class="spacer">  </span>
+        <a href="#" style="color: white;">Olvidé Mi Contraseña</a>
+    </div>
+    
+    <br><br><br><br>
+    <br><br><br><br>
+</body>
+
+<script>
+    function mostrarMensaje() {
+        alert("¡Sesión iniciada!");
+}
+</script>
+
+
+
+{% endblock %}
+
+

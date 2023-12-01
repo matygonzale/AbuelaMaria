@@ -1,0 +1,37 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+
+{% block title %}
+    Resultados de Búsqueda
+{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/buscarprod.css' %}">
+</head>
+    <div class="container">
+        <h1>Resultados de Búsqueda</h1>
+        
+        <form method="GET" class="search-form">
+            <input type="text" name="q" value="{{ consulta }}" placeholder="Buscar productos por nombre">
+            <button type="submit">Buscar</button>
+        </form>
+        
+        <ul class="product-list">
+            {% for producto in productos %}
+                <li class="product-item">
+                    <h2>{{ producto.nombre }}</h2>
+                    <div class="product-image">
+                        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" style="width: 100%; height: auto;">
+                    </div>
+                    <p class="product-description">{{ producto.descripcion }}</p>
+                    <p class="product-price" style="color: black;">Precio: ${{ producto.precio }}</p>
+                    <a href="{% url 'detalleprod' producto.id %}" class="btn btn-outline-dark mt-auto">Detalle Producto</a>
+                    <!-- Agrega aquí cualquier otro detalle que desees mostrar -->
+                </li>
+            {% empty %}
+                <li class="no-results">No se encontraron productos.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+{% block title %} Crear Producto {% endblock %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <!-- Agrega las referencias a Bootstrap CSS y JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/registro.css' %}">
+    <!-- Agrega estilos personalizados -->
+</head>
+<div class="container">
+    <div class="card-body1" id="card-body1" name="card-body1">
+        <br><br>
+        <div class="col-md-6 mx-auto form-container">
+            <form method="post" enctype="multipart/form-data" >
+                <h2 class="text-center " style="color: rgb(0, 0, 0);">Agregar Producto</h2>
+                <br>
+                {% csrf_token %}
+                <h4 for="userprod" style="color: rgb(0, 0, 0);" >Nombre Producto:</h4>
+                {{ form.nombre }}
+                <h4 for="descripcion" style="color: rgb(0, 0, 0);"  required >Descripcion:</h4>
+                {{ form.descripcion }}
+                <h4 for="precio" style="color: rgb(0, 0, 0);" required >Precio:</h4>
+                {{ form.precio }}
+                <h4 for="imagen" style="color: rgb(0, 0, 0);" required>Imagen Producto:</h4>
+                {{ form.imagen }}
+                <h4 for="imagen" style="color: rgb(0, 0, 0);" required>stock:</h4>
+                {{ form.stock }}
+                <h4 for="estado" style="color: rgb(0, 0, 0);">Estado Producto:</h4>
+                {{ form.activo }}
+                <h4 for="tipoprod" style="color: rgb(0, 0, 0);">Categoria Producto:</h>
+                {{ form.idTipo }}
+                
+
+                
+                <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>
+{% endblock %}
+
+

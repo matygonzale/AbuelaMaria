@@ -1,0 +1,62 @@
+
+{% extends "tienda/Base.html" %}
+{% load static %}
+{% block title %} productos {% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/main.css' %}">
+</head>
+<div class="card">
+    <div class="card-body" >
+        <h4 class="card-title">Productos</h4>
+        <br>
+        <div class="table-responsive" >
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>nombre</th>
+                        <th>imagen</th>
+                        <th>descripcion</th>
+                        <th>precio</th>
+                        <th>stock</th>
+                        <th>acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody >
+                    {% for producto in producto %}
+                    <tr >
+                        <td>{{producto.nombre}}</td>
+                        <td>
+                            {% if producto.imagen %}
+                                <img src="{{ producto.imagen.url }}" height="200">
+                            {% else %}
+                                <!-- Manejar el caso cuando no hay imagen -->
+                                <p>No hay imagen disponible</p>
+                            {% endif %}
+                        </td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>{{producto.precio}}</td>
+                        <td>{{producto.stock}}</td>
+                        <td>
+                            <a name="" id="" class="btn btn-success" href="{% url 'editarproducto' producto.id %}" role="button">Editar</a>
+                            |
+                            <a name="" id="" class="btn btn-danger" href="{% url 'eliminarproducto' producto.id %}" role="button">Borrar</a>
+                    </tr>
+                    {% endfor %}
+                   
+                </tbody>
+                
+            </table>
+            <div class="card-header" style="background-color: rgb(255, 255, 255); border: none; text-align: center;">
+                <a name="btnproducto" id="" class="btn btn-success" href="{% url 'crearproducto' %}" role="button">Agregar Producto</a>
+                <span></span>
+                <a name="btncrearproducto" id="" class="btn btn-success" href="{% url 'buscarproducto' %}" role="button">Buscar Productos</a>
+            </di>
+        </div>
+        
+
+    </div>
+
+</div>
+{% endblock %}

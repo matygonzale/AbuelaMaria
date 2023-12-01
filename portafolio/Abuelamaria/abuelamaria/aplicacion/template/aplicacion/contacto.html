@@ -1,0 +1,111 @@
+{% extends "tienda/base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<section>
+    <div class="container w-60 m-auto text-center" id="equipo" >
+      <h1 class="p-3 fs-2 border-bottom border-3" style="color: red;" >EQUIPO PEQUEÑO CON GRANDES RESULTADOS</h1> 
+      <br>
+        <p class="fs-4 ">Siempre buscamos las personas adecuadas para que trabajen con nosotros. Si te sientes
+        listo para este reto, te esperamos para que te unas a nosotros.</p>
+    </div>
+    <div class="mt-5 text-center">
+        <img id="img-equipo1" src="{% static 'aplicacion/img/equipo1.jpg' %}" >
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="body">
+          <a href="https://docs.google.com/forms/d/1W7pK4VFygaW5ioWgUOqE87fcy1qiUYkHaF03qKHS9Sw/prefill">
+              <img src="{% static 'aplicacion/img/sugerencias.PNG' %}" class="card-img-top" alt="...">
+          </a>
+      </div>
+      </div>
+      <div class="col-md-6" style="text-align: center;">
+        <div class="body">
+          <br><br>
+          <h2>¿Alguna Sugerencia De Mejora A Nuestra Empresa?</h1>
+          <br>
+          <h1 class="fs-4 " style="text-align: center;">¿Alguna inconformidad con nuestros productos?</h2> 
+        </div>
+        </div>
+      <div class="col-md-3">
+        <a href="https://docs.google.com/forms/d/1W7pK4VFygaW5ioWgUOqE87fcy1qiUYkHaF03qKHS9Sw/prefill">
+          <img src="{% static 'aplicacion/img/sugerencias.PNG' %}" class="card-img-top" alt="...">
+      </a>
+      </div>
+    </div>
+
+
+
+
+    <br>
+    <div id="local" class="border-none" style="background-color: rgb(255, 255, 255);">
+        <div class="mapa"> </div>
+        <div>
+            <div class="wrapper-local">
+                <h2>Ubicado El Bosque Santiago</h2>
+                <h2 class="text-primary mb-4" id="typewriter"></h2>
+                <p class="fs-5 text-body">Elijimos El Bosque para nuestra oficina con el objetivo de estar cerca a nuestros
+                  clientes. Estamos ubicados en <strong>Calle Luis Barros Borgoño 455</strong> un lugar muy acojedor y con ubicacion centrica.
+                  ¡Visitennos y no se arrepentiran!</p>
+                <section class="d-flex justify-content-start" id="numeros-local">
+                    <div>
+                      <p class="text-primary fs-5">97%</p>
+                      <p>Aprobacion</p>
+                    </div>
+                    <div>
+                      <p class="text-primary fs-5">25</p>
+                        <p>Trabajadores</p>
+                    </div>
+              </section>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!--========================================================== -->
+                        <!-- SECCION CONTACTOS-->
+<!--========================================================== -->
+<section id="seccion-contacto" class="border-bottom border-secondary border-2">
+    <div id="bg-contactos">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1b2a4e" fill-opacity="1" d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    </div>
+    <div class="container  border-top " style="max-width: 500px" id="contenedor-formulario">
+        <div class="text-center mb-4" id="titulo-formulario">
+          <div><img src="./img/support.png" alt="" class="img-fluid ps-5"></div>
+          <br>
+
+
+
+
+          
+          <h2>Contactanos</h2>
+          <p class="fs-5">Estamos aqui para hacer realidad de tus proyectos</p>
+        </div>
+  
+       
+  
+        <form   method="POST" data-netlify="true" action="#">     
+              <div class= "mb-3">           
+                <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+              </div>
+              <div class="mb-3">            
+                <input type="input" class="form-control" id="name" name="name" placeholder="Nombre">
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+              </div> 
+            <div class="mb-3">       
+              <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+            </div> 
+            <div class="mb-3">
+              <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
+            </div>
+        </form>
+    
+    </div>
+  </section>
+
+{% endblock %}

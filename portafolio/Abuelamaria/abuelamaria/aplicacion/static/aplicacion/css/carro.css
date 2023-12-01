@@ -1,0 +1,156 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+#body-carro {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contenedor-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.item {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.titulo-item {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.precio-item {
+    font-weight: bold;
+    font-size: 18px;
+    color: #008000; /* Color verde para el precio */
+}
+
+.boton-item {
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease; /* Agrega una transición suave para todos los cambios */
+}
+
+.boton-item:hover {
+    transform: scale(1.1); /* Hace que el botón se agrande al 110% del tamaño original al pasar el cursor sobre él */
+    background-color: #ff0000; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
+
+/* Estilos del carrito */
+#carrito-icono {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.carrito {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #fff;
+    max-width: 400px;
+    width: 100%;
+}
+
+.carrito-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.carrito-items .carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito-items .carrito-item img {
+    max-width: 60px;
+    border-radius: 8px;
+}
+
+.carrito-item-titulo {
+    font-weight: bold;
+}
+
+.carrito-item-precio {
+    font-size: 16px;
+}
+
+.carrito-total {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carrito-total .btn-pagar {
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carrito-total .btn-pagar:hover {
+    transform: scale(1.05);
+}
+
+
+

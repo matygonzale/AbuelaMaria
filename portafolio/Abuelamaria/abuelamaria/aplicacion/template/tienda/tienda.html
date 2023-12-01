@@ -1,0 +1,44 @@
+{% extends "tienda/Base.html" %}
+<br>
+{% load static %}
+
+{% block content %}
+
+  <section style="background-color: rgb(230, 209, 209);">
+<div class="container" style="background-color: rgb(172, 143, 15);">
+
+  
+  <div class="row">
+{% for producto in productos %}
+
+    <div class="col-md-3">  
+    <div class="card" style="width: 100%; margin:  10px 10px;">
+      
+      <img src="{{producto.imagen.url }}"  class="card-ing-top">
+      
+      <div class="card-body" style="text-align: center;">
+      <h7 class="card-title">{{producto.nombre}}</h7>
+
+      <p class="card-text">{{producto.precio}}&nbsp;$</p>
+      </div>
+      <a href="{% url 'detalleprod' producto.id %}">Ver detalles</a>
+      <a href="{% url 'detalleprod' producto.id %}" class ="btn btn-success">Agregar Producto</a>
+
+
+      <a href="{% url 'carro:agregarproducto' producto.id %}" class ="btn btn-success">Agregar Producto</a>
+      <br>
+    </div>
+
+
+  </div>
+{% endfor %}
+  
+</div>  
+</div>
+
+</section>
+  
+{% endblock %}
+
+
+

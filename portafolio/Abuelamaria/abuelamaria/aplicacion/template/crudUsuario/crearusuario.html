@@ -1,0 +1,70 @@
+{% extends "tienda/base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'aplicacion/css/usuario.css' %}">
+    <title>Crear Usuario</title>
+</head>
+<body>
+    <br>
+    <div class="form-container" id="form-container" name="form-container">
+        <form method="POST" id="registroForm" onsubmit="return validarContraseñas()">
+            {% csrf_token %}
+            <h1>Registro de Usuario</h1>
+            
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Clave</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <strong><div id="errorMensaje" style="color: rgb(255, 0, 0);"></div></strong>
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+            <label for="telefono">Teléfono:</label>
+            <input type="number" style="color: white;" id="telefono" name="telefono" pattern="[0-9]*" maxlength="15" placeholder="Ingrese su número de teléfono" required>
+            <br><br><br>
+            <!-- Div para mostrar mensaje de error -->
+            
+            <button type="submit">Crear usuario</button>
+        </form>
+    </div>
+    <br>
+
+    <script>
+        function validarContraseñas() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var errorMensaje = document.getElementById("errorMensaje");
+
+            if (password !== confirmPassword) {
+                errorMensaje.innerHTML = "Las contraseñas no coinciden.";
+                return false; // Evita que el formulario se envíe si las contraseñas no coinciden
+            } else {
+                errorMensaje.innerHTML = "";
+                return true; // Permite que el formulario se envíe si las contraseñas coinciden
+            }
+        }
+    
+    </script>
+
+</body>
+</html>
+
+{% endblock %}

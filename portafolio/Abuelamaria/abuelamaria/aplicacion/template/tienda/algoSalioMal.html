@@ -1,0 +1,25 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Compra</title>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/Boleta.css' %}">
+</head>
+<body>
+    
+
+    <div class="tituloboleta" style="background-color: rgb(255, 235, 54);">
+        <h1 style="text-align: left; color: rgb(0, 0, 0);">
+            <span>&nbsp;</span><span>&nbsp;</span>Algo Salió Mal (Error en el Token)</h1>
+        <h4 style="text-align: left; color: rgb(0, 0, 0);"><span>&nbsp;</span><span>&nbsp;</span>
+            Vuelve a Intentarlo</h4>
+        <br>
+        <br>
+
+    </div>
+
+{% endblock %}

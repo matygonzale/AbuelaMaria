@@ -1,0 +1,44 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+{% block title %} productos {% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <!-- Agrega las referencias a Bootstrap CSS y JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/editar.css' %}">
+    <!-- Agrega estilos personalizados -->
+
+       <!-- Agrega estilos personalizados -->
+   
+</head>
+<body>
+    <div class="container" id="containe1">
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <h2 class="text-center">Editar Producto</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="boton-redondo">Editar Producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</body>
+</html>
+
+
+{% endblock  %}
+

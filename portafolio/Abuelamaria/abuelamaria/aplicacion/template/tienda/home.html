@@ -1,0 +1,164 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+
+{% block content %}
+<title>home</title>
+
+<body>
+  <!-- PRIMERA SECCIONS CARRUSEL Y 3 SECCIONA AL LADO DERECHO -->
+<div id="carrusel-container">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="{%  static 'aplicacion/img/carrusel2.jpg' %}" class="d-block w-100" alt="">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="{%  static 'aplicacion/img/carrusel2.jpg' %}" class="d-block w-100" alt="">
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="{%  static 'aplicacion/img/carrusel2.jpg' %}" class="d-block w-100" alt="">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>    
+</div>
+<div id="secciones-container">
+    <div class="seccion2">
+      <a href="https://docs.google.com/forms/d/1W7pK4VFygaW5ioWgUOqE87fcy1qiUYkHaF03qKHS9Sw/prefill">
+        <img src="{% static 'aplicacion/img/home2.png' %}" class="card-img-top" alt="...">
+      </a>
+    </div>
+    <div class="seccion2-1" >
+      <a href="{% url 'contacto' %}" style="color: rgba(240, 255, 255, 0);">
+        <img src="{% static 'aplicacion/img/home3.png' %}" class="card-img-top" alt="...">
+      </a>
+    </div>
+    <div class="seccion2-2">
+      <a href="{% url 'carro' %}" style="color: rgba(240, 255, 255, 0);">
+        <img src="{% static 'aplicacion/img/home4.png' %}" class="card-img-top" alt="...">
+      </a>
+    </div>
+    <br>
+</div><br>
+<h6 style="color: rgba(240, 248, 255, 0);"></h6>
+<br>
+<!-- SEGUNDA SECCION 4 SECCIONES CON IMG Y BOTON  -->
+<section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
+  <h1 class="p-3 fs-2 border-bottom border-3" style="color: red;" >Conoce Nuestras Mini Galletas </h1>   
+</section>
+<br>
+<div style="background-color: aliceblue;">
+  <div class="card-group" style="text-align: center" >
+    <div class="card" >
+      <img src="{% static 'aplicacion/img/seccion5.jpg' %}">
+      <div class="card-body">
+        <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button>
+        <!-- No tomar en cuenta funciona Bien) -->
+      </div>
+    </div>
+    <div class="card" >
+      <img src="{% static 'aplicacion/img/seccion5-1.jpg' %}"  >
+      <div class="card-body">
+        <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button>
+        <!-- No tomar en cuenta funciona Bien) -->
+      </div>
+    </div>
+    <div class="card" >
+      <img src="{% static 'aplicacion/img/seccion5-1.jpg' %}"  >
+      <div class="card-body">
+        <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button>
+        
+        <!-- No tomar en cuenta funciona Bien) -->
+      </div>
+    </div>
+    <div class="card">
+      <img src="{% static 'aplicacion/img/seccion5-4.jpg' %}">
+      <div class="card-body">
+        <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<!-- TERCERA SECCION 2 COLUMNAS CON IMG Y BOTON -->
+<br>
+  <div style="display: flex;">
+      <br>
+      <div class="home60" id="home60" name="home60">
+        <!-- Contenido de la columna izquierda (60%) -->
+        </div>
+      <br>
+      <br><br><br><br><br><br>
+      <div class="home40" id="home40" name="home40">
+        <!-- Contenido de la columna derecha (40%) -->
+        <br>
+        <h1 class="text-center" style="color: #ff0000;">Nuestra Historia</h1>
+        <br>
+        <br>
+        <p class="text-center" style="color: #000000;">Nos guiamos por la ética, la integridad
+          y la innovación en todo lo que hacemos. Valoramos a nuestro equipo interno y nos esforzamos
+          por capacitar, apoyar y estimular su crecimiento. Creemos que la paciencia y la constancia 
+          son clave para lograr resultados excepcionales para todas las partes involucradas</p>
+        <br>
+        <br>
+        <button class="boton-redondo" onclick="window.location.href = '{% url 'Nosotros' %}'">Conocer Mas</button>
+        <!-- No tomar en cuenta funciona Bien) -->
+        <br>
+      </div>
+      <br>
+    </div>
+    <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
+      <h1 class="p-3 fs-2 border-bottom border-3" style="color: red;" >Conoce Nuestras Galletas </h1>   
+    </section>
+    <br>
+    
+    <div style="display: flex;">
+      <br>
+      <div class="card" id="home33" name="home33">
+      <!-- Contenido de la columna izquierda 33%) -->
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br> <br>
+      <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button> 
+      </div>
+       
+      <br>
+      <div class="home33-1" id="home33-1" name="home33-1">
+      <!-- Contenido de la columna izquierda 33%) -->
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button> 
+      </div>
+      <div class="home33-2" id="home33-2" name="home33-2">
+        <!-- Contenido de la columna derecha (40%) -->
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <br><br><br>
+      <button class="boton-centro" onclick="window.location.href = '{% url 'carro' %}'">Conocer Mas</button>
+      </div>
+      
+      <br>
+    </div>
+    <br>
+    
+</body>
+
+{% endblock %}
+

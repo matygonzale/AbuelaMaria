@@ -1,0 +1,86 @@
+{% extends "tienda/Base.html" %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleta de Compra</title>
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/Boleta.css' %}">
+</head>
+<body>
+    
+
+    <div class="tituloboleta" style="background-color: rgb(255, 235, 54);">
+        <h1 style="text-align: left; color: rgb(0, 0, 0);">
+            <span>&nbsp;</span><span>&nbsp;</span>Tu Pedido Se Ha Realizado Correctamente</h1>
+        <h4 style="text-align: left; color: rgb(0, 0, 0);"><span>&nbsp;</span><span>&nbsp;</span>
+            Revisa Tu Correo Electronico Para Ver El Estado De Tu Pedido</h4>
+        <br>
+        <br>
+
+    </div>
+    <br>
+
+    <div class="factura">
+
+        <div class="encabezado">
+            <h1>Abuela Maria Spa </h1>
+        </div>
+
+        <div class="detalles-producto">
+            <h2>Detalle de Productos</h2>
+                    <ul>
+        
+                        {% if carritoss %}
+                        {% if carritoss.count == 1 %}
+                            {# Caso: Solo un producto en el carrito #}
+                            <li>
+                                <span><strong>Nombre: </strong>{{ carritoss.0.id_producto.nombre }}</span><br>
+                                <span><strong>Cantidad: </strong>{{ carritoss.0.cantidad }}</span><br>
+                                <span><strong>Precio Unitario: </strong>${{ carritoss.0.id_producto.precio }}</span><br>
+                                <br>
+                            
+                            </li>
+                        {% elif carritoss.count >= 2 %}
+                            {# Caso: Más de un producto en el carrito #}
+                            {% for x in carritoss %}
+                                <li>
+                                    <span><strong>Nombre: </strong>{{ x.id_producto.nombre }}</span><br>
+                                    <span><strong>Cantidad: </strong>{{ x.cantidad }}</span><br>
+                                    <span><strong>Precio Unitario: </strong>${{ x.id_producto.precio }}</span><br>
+                                    <br>
+                            {% endfor %}
+                            <div class="totales">
+                                <p><strong>Total: </strong>${{ carritoss.0.id_orden_compra.monto }}</p>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <li>
+                            <span>No hay productos en la boleta.</span>
+                        </li>
+                    {% endif %}
+                        
+                    </ul>
+        </div>
+        <h1> </h1>
+
+        
+        <br>
+        <h5 style="text-align: center;"><strong>¡Gracias Por Comprar Con Nosotros!</strong></h5>
+        <br>
+    </div>
+    <br>
+    <br>
+    
+ 
+</body>
+    <!-- Puedes incluir scripts o enlaces a archivos JS si es necesario -->
+
+
+{% endblock %}
+
+
+
+

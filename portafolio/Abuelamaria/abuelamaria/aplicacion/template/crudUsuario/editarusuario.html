@@ -1,0 +1,45 @@
+{% extends "tienda/base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'aplicacion/css/usuario.css' %}">
+    <title>Editar-Eliminar Usuario</title>
+</head>
+<body>
+    <br>
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Editar Usuario</h1>
+            {{form.nombre}}
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+            {{form.apellido}}
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required>
+            {{form.email}}
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required> 
+            <br>
+            <!-- FALTA REFERENCIAR AL VIEW EDITAR USUARIO  -->
+            <button type="submit">Editar usuario</button>
+
+        </form>
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Eliminar Usuario</h1>
+            <!-- FALTA REFERENCIAR AL VIEW ELIMINAR USUARIO  -->
+            <button type="submit">Eliminar usuario</button>
+        </form>\
+        <br><br><br>
+    </div>
+    <br>
+</body>
+</html>
+{% endblock %}

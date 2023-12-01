@@ -1,0 +1,73 @@
+body{
+
+    background: url(../img/carrusel2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.274);
+}
+#login-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #00000083;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#butoonLogin {
+    width: 200px; /* Ancho del botón */
+    padding: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Establece un radio de 20px para redondear los bordes */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s; /* Agrega una transición para la animación */
+}
+
+#butoonLogin:hover {
+    transform: scale(1.1); /* Cambia el tamaño al pasar el cursor (10% más grande) */
+    background-color: #42b300; /* Cambia el color al pasar el cursor */
+}
+
+.spacer {
+    margin: 1 30px; /* Agrega un margen horizontal de 20px para crear espacio entre las etiquetas */
+}
+
+.icono-perfil {
+    font-size: 60px; /* Ajusta el tamaño del ícono según tus preferencias */
+    border-radius: 50%; /* Hace que el ícono sea redondo */
+    padding: 10px; /* Añade un poco de espacio alrededor del ícono */
+    background-color: rgba(129, 129, 129, 0.473); /* Opcional: Agrega un fondo de color al ícono */
+    color: #fff; /* Opcional: Cambia el color del ícono para que sea visible en el fondo */
+}

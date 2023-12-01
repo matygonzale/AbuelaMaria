@@ -1,0 +1,489 @@
+/*===============Propiedades Globales================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+/*===================MENU==========================*/
+#navbar1{
+
+    background-color: #ff0000;
+    
+   
+}
+
+
+
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+
+#menu a, button{
+     font-size: 18px !important;
+     font-weight: 600;
+     background-color: #f8f8f800;
+    
+ }
+
+ #menu a{
+     color:#3f3f3f;
+     
+ }
+/*===================SLIDER DE IMAGENES==========================*/
+
+.carousel-inner {
+    max-height:50rem !important;
+}
+
+/*===================SECCION NUESTRO EQUIPO IMAGEN==========================*/
+
+
+
+#img-equipo{
+    max-height:30rem !important;
+    width:50%;
+}
+
+/*=============================================*/
+/*===================VISTA NOSOTROS============*/
+#local {
+    margin-top:50px;
+    background-color: #f8f5f5;
+    display:flex;
+    justify-content: center; 
+    padding-bottom: 300px; 
+}
+/* Estilo para el botón con bordes redondos */
+.boton-redondo {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: emerge 1s ease; /* Aplica la animación "emerge" */
+    transition: transform 0.3s, background-color 0.3s;
+    
+    /* Estilo cuando el cursor está sobre el botón */
+    &:hover {
+    background-color: #408f00; /* Nuevo color de fondo en hover */
+    transform: scale(1.1); /* Escala el botón al 110% en hover */
+    color: #ffffff;
+    }
+  }
+/* Definición de la animación "emerge" */
+  @keyframes emerge {
+    0% {
+        transform: translateX(1000px); /* Empieza desde la izquierda */
+      opacity: 0; /* Inicialmente invisible */
+    }
+    100% {
+      transform: translateX(0); /* Termina en su posición original */
+      opacity: 1; /* Totalmente visible */
+    }
+  }
+
+
+/* Estilo para la columna izquierda (60%) */
+#seccion60 {
+    background: url(../img/abuela1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 60%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#seccion60der {
+   background-color: #ffffff0a;
+    flex: 65%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* Estilo para la columna derecha (40%) */
+.seccion40 {
+    flex: 40%;
+    background-color: #ffffff;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+#seccion40yzq {
+    flex: 40%;
+    background: url(../img/abuela4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+
+#section1 {
+    display: flex;
+    width: 100%; /* Ancho completo para la sección */
+    background-color: #f0f0f0;
+}
+
+.column {
+    flex: 1; /* Tres columnas de ancho igual */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+/*=============================================*/
+/*=============================================*/
+
+
+
+/*=============================================*/
+/*================VISTA HOME====================*/
+/* Estilo para el carrusel en la parte izquierda */
+#carrusel-container {
+    float: left;
+    width: 70%; /* Ajusta el ancho del carrusel según tu preferencia */
+    height: 100%;
+    background-color: #ffffff00; /* Fondo del carrusel */
+}
+
+#carrusel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo para las secciones en la parte derecha */
+#secciones-container {
+    float: left;
+    width: 30%; /* Ajusta el ancho de las secciones según tu preferencia */
+    height: 100%;
+    background-color: #ffffff00; /* Fondo de las secciones */
+}
+
+.seccion2{
+    width: 100%;
+    height: 33.33%; /* Divide las secciones en 3 partes iguales */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.seccion2-1{
+    width: 100%;
+    height: 33.33%; /* Divide las secciones en 3 partes iguales */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+;
+   
+}
+.seccion2-2{
+    width: 100%;
+    height: 33.33%; /* Divide las secciones en 3 partes iguales */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+   
+}
+.card {
+    border: none; /* Elimina el borde de las tarjetas */
+  }
+  .boton-centro {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, background-color 0.3s; /* Transiciones para escala y color de fondo */
+}
+
+.boton-centro:hover {
+    background-color: #408f00; /* Cambia el color de fondo en hover */
+    transform: scale(1.1); /* Escala el botón al 110% en hover */
+    color: #ffffff; /* Cambia el color del texto a blanco en hover */
+}
+
+/* Estilo para la columna izquierda (60%) */
+#home60 {
+    background: url(../img/abuela2.png);
+    flex: 45%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para la columna derecha (40%) */
+.home40 {
+    flex: 55%;
+    background-color: #ffffff;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+#home33 {
+    background: url(../img/packmini.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 33.3%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#home33-1 {
+    background: url(../img/carro4.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 33.3%;
+    padding: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#home33-2 {
+    background: url(../img/carro1.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 33.3%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*=============================================*/
+/*=============================================*/
+
+
+
+/*===================SECCION CONTACTO==========================*/
+.mapa {
+    background: url(../img/mapa2.png);
+    background-size: cover;
+    width:100%;
+    height:500px;
+}
+
+#img-equipo1 {
+    background-color: #ffffff;
+    width:85%;
+    height:350px;
+}
+
+
+.wrapper-local {
+    width:50%;
+    margin-left:100px;
+    padding-top:150px;
+}
+
+#numeros-local{
+    margin:0 !important;
+    padding:0 !important;
+}
+#numeros-local div {
+    padding: 0 20px 0 0;   
+    text-align:left;
+    height:48px;
+}
+
+#numeros-local div:not(:last-child) {
+    border-right: 2px solid rgb(255, 187, 0);
+  }
+#numeros-local div:not(:first-child) {
+    padding-left:20px;
+  }
+
+#numeros-local p{
+    margin:0;
+}
+
+/*=========================CONTACTOS BACKGROUND================================*/
+
+#bg-contactos{
+    position:relative;
+    top: -130px;
+} 
+
+ #seccion-contacto{
+    background-color: #1b2a4e;
+    min-height:500px;
+    position:relative;
+}
+
+/*=========================CONTACTOS FORMULARIO================================*/
+
+#contenedor-formulario{
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius:5px;
+    
+}
+
+#titulo-formulario {
+    color: #000000;
+}
+
+/*======================================================*/
+/*======================================================*/
+
+
+/*=============CATALOGOO================================*/
+/*======================================================*/
+#productosCatalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+.product h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.product p {
+    font-size: 1.2em;
+}
+#boton-Catalogo {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, background-color 0.3s; /* Transiciones para escala y color de fondo */
+}
+
+#boton-Catalogo:hover {
+    background-color: #408f00; /* Cambia el color de fondo en hover */
+    transform: scale(1.1); /* Escala el botón al 110% en hover */
+}
+/*======================================================*/
+/*======================================================*/
+
+
+/*=========================FOOTER================================*/
+
+footer {
+    background: #ffd000;;
+    min-height: 100px;
+    width: 100;
+}
+
+#header1 {
+    background: #ffd900;
+    min-height: 50px;;
+    
+}
+
+
+footer p{
+    color:#f3f3f3;
+    text-align:center;
+}
+#iconos  {
+    font-size: 20px;
+    padding: 0 9px;
+    color:#fffb00;
+}
+
+/*=========================MEDIA QUERIES PANTALLA ANCHA================================*/
+
+@media (max-width:1200px){
+    #intro, #equipo {
+        width:90% !important;
+        margin:auto;
+    }
+  
+    #local {
+        flex-wrap: wrap;
+        padding-top:30px;
+   }
+   .wrapper-local {
+    width:90%;
+    margin:auto;
+    padding-top:50px;    
+   }
+ 
+}
+/*=========================MEDIA QUERIES PANTALLA SM================================*/
+
+
+@media (max-width:1000px) {
+
+    #intro, #equipo{
+        width:100% !important;
+        margin:auto;
+    }
+
+    .wrapper-local {
+        width:90%;
+        margin:auto;
+        padding-top:50px;    
+    }
+    #local {
+        flex-wrap: wrap;
+    }
+    .mapa img {
+        width:100%;
+        height:auto;
+    }
+    #bg-contactos{
+        top: -120px;
+    }
+
+
+}
+/*=========================MEDIA QUERIES PANTALLA EXTRA-SM================================*/
+
+@media (max-width: 576px) {
+    #servicios-fila-2 {
+        width:100% !important;
+    }
+    #servicios-fila-1 {
+        width:100% !important;
+    }
+
+    .icono-wrap{
+        flex-wrap:wrap !important;
+        justify-content: center !important;
+        text-align: center;
+    }
+}
+

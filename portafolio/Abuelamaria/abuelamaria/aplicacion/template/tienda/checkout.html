@@ -1,0 +1,129 @@
+{% extends "tienda/Basecheckout.html" %}
+{% load static %}
+{% load utilidades %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{%  static 'aplicacion/css/checkout.css' %}">
+</head>
+<body>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container pb-5 mb-2">
+    
+    <div class="alert alert-info alert-dismissible fade show text-center mb-30"><span class="alert-close" data-dismiss="alert"></span><i class="fe-icon-award"></i>&nbsp;&nbsp;Con esta compra acumularás <strong>{{puntos}}</strong> puntos de descuentos en tus próximas compras.</div>
+    
+    <form name="form_carrito" method="POST" action="">
+        {% csrf_token %}
+
+    <tr>
+        <th scope="col" colspan="4" style="text-align: right;">{% if not cuantos is 0 %}
+            <a class="btn btn-sm btn-outline-danger" id="vaciarCarroBtn" title="Vaciar carro">
+                <i class="fas fa-shopping-cart"></i> Vaciar carro
+            </a>
+            {% endif %}<hr/></th>
+    </tr>
+
+    {% for dato in datos %}
+    <!-- No tomar en cuenta funciona Bien) -->
+    <div class="cart-item d-md-flex justify-content-between">
+        
+        <a class="btn btn-sm btn-outline-danger" id="quitarCarroBtn{{forloop.counter}}" title="Quitar del carro" style="display: flex; align-items: center; justify-content: center;">
+            <span class="icono-basura"><i class="bi bi-trash"></i></span>
+        </a>
+    
+    <input type="hidden" id="accionParaPython" name="accionParaPython" >
+    <div class="px-3 my-3">
+    <a class="cart-item-product" href="#">
+    <div class="cart-item-product-thumb"><img src="{{ dato.producto.imagen.url }}" alt="Product"></div>
+    <div class="cart-item-product-info">
+    <h4 class="cart-item-product-title">{{dato.producto.nombre}}</h4><span><strong>Descripcion:</strong> {{dato.producto.descripcion}}</span>
+    </div>
+    </a>
+    </div>
+    <div class="px-3 my-3 text-center">
+    <div class="cart-item-label">Cantidad</div>
+    <div class="count-input">
+    
+        <select class="form-control" name="cantidad_{{forloop.counter}}" id="cantidad_{{forloop.counter}}" onchange="modificarCantidadProductoCarro('{{dato.id}}', this.value);">
+            
+            {% for i in rango %}
+                <option value="{{ forloop.counter }}" {% if dato.cantidad is forloop.counter %} selected="true" {% endif %}> {{ forloop.counter }}</option>
+            {% endfor %}
+            
+        </select>
+        
+        
+    </div>
+    </div>
+    <div class="px-3 my-3 text-center">
+    <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">${{dato.producto.precio}}</span>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('quitarCarroBtn{{forloop.counter}}').addEventListener('click', function() {
+                confirmaAlert('¿Realmente desea quitar este producto de su carrito?', '{% url "carro_quitar" dato.producto.id %}');
+            });
+        });
+    </script>
+    
+    {% endfor %}
+    
+    
+</div>
+</form>
+   
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="{% static 'aplicacion/js/scripts.js' %}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('vaciarCarroBtn').addEventListener('click', function() {
+                confirmaAlert('¿Realmente desea vaciar su carrito?', '{% url "carro_vaciar" %}');
+            });
+        });
+    </script>
+    
+
+    <hr class="my-2">
+    <div class="row pt-3 pb-5 mb-2">
+        <div class="column"><a class="boton-redondo" href="{% url 'carro_pagar' %}" title=" Ir a pagar"><i class="fas fa-money-bill-wave"></i> Ir a pagar</a></div>
+    </div>
+
+    <footer class="w-100 d-flex align-items-center justify-content-between flex-wrap" id="footercarro">
+        <h1></h1>
+        <div class="footer-section">
+          <h5 class="mb-3">SIGUENOS</h5>
+          <div class="d-flex align-items-center">
+            <a href="#" class="social-icon"><i class="bi bi-facebook"
+                style="color: red; font-size: 24px; margin-right: 10px;"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram"
+                style="color: red; font-size: 24px; margin-right: 10px;"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-youtube" style="color: red; font-size: 24px;"></i></a>
+          </div>
+          <br><br><br><br>
+        </div>
+        <div id="contacto">
+          <br>
+          <h6>CONTACTANOS</h6>
+          <i class="bi bi-envelope" style="color: rgb(255, 0, 0); font-size: 24px;"></i> info@abuelamaria.com <br>
+          <br>
+          <i class="bi bi-telephone" style="color: rgb(255, 0, 0); font-size: 24px;"></i> 800 GALLETAS (44511235)<br>
+          <br>
+          <i class="bi bi-whatsapp" style="color: rgb(255, 0, 0); font-size: 24px;"></i> +5691235690
+          <br><br>
+        </div>
+        <div>
+          <h6">Abuela Maria.</h6>
+            <p class="fs-6 " style="color: black;">&copy; Todos Los Derechos Reservados 2023.</p>
+        </div>
+        <br>
+      </footer>
+    </body>
+    </html>
+    
+    {% endblock %}
